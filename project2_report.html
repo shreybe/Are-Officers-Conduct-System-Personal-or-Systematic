@@ -1,199 +1,263 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>Project 2 Report</title>
-        <style>
-            :root {
-                --color-neutral-95: hsl(220 10% 95%);
-                --color-neutral-90: hsl(220 10% 90%);
-                --color-neutral-80: hsl(220 10% 80%);
-                --color-neutral-70: hsl(220 10% 70%);
-                --color-neutral-60: hsl(220 10% 60%);
-                --color-neutral-50: hsl(220 10% 50%);
-                --color-neutral-40: hsl(220 10% 40%);
-                --color-neutral-30: hsl(220 10% 30%);
-                --color-neutral-20: hsl(220 10% 20%);
-                --color-neutral-10: hsl(220 10% 10%);
-            }
+  <head>
+    <title>Project 2 Report</title>
+    <style>
+      :root {
+        --color-neutral-95: hsl(220 10% 95%);
+        --color-neutral-90: hsl(220 10% 90%);
+        --color-neutral-80: hsl(220 10% 80%);
+        --color-neutral-70: hsl(220 10% 70%);
+        --color-neutral-60: hsl(220 10% 60%);
+        --color-neutral-50: hsl(220 10% 50%);
+        --color-neutral-40: hsl(220 10% 40%);
+        --color-neutral-30: hsl(220 10% 30%);
+        --color-neutral-20: hsl(220 10% 20%);
+        --color-neutral-10: hsl(220 10% 10%);
+      }
 
-            html {
-                font: 100%/1.5 system-ui;
-                counter-reset: figure;
-                background: var(--color-neutral-95);
-                max-width: min(75vw, 80em);
-                margin: 0 auto;
-            }
+      html {
+        font: 100%/1.5 system-ui;
+        counter-reset: figure;
+        background: var(--color-neutral-95);
+        max-width: min(75vw, 80em);
+        margin: 0 auto;
+      }
 
-            /* Headings */
+      /* Headings */
 
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
-                line-height: 1.1;
-                font-weight: 600;
-                text-wrap: balance;
-            }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        line-height: 1.1;
+        font-weight: 600;
+        text-wrap: balance;
+      }
 
-            h1,
-            h2 {
-                border-bottom: 1px solid var(--color-neutral-80);
-                padding-bottom: 0.2em;
-            }
+      h1,
+      h2 {
+        border-bottom: 1px solid var(--color-neutral-80);
+        padding-bottom: 0.2em;
+      }
 
-            h1 {
-                margin-block: 1em 0.5rem;
-                font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
-                font-weight: 800;
+      h1 {
+        margin-block: 1em 0.5rem;
+        font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+        font-weight: 800;
 
-                small {
-                    display: block;
-                    width: fit-content;
-                    padding: 0.2em 0.5em;
-                    margin-inline: auto;
-                    color: white;
-                    background: var(--color-neutral-40);
-                    font-size: 40%;
-                    text-transform: uppercase;
-                    white-space: nowrap;
-                }
-            }
+        small {
+          display: block;
+          width: fit-content;
+          padding: 0.2em 0.5em;
+          margin-inline: auto;
+          color: white;
+          background: var(--color-neutral-40);
+          font-size: 40%;
+          text-transform: uppercase;
+          white-space: nowrap;
+        }
+      }
 
-            h2 {
-                font-size: 180%;
-                color: var(--color-neutral-30);
-            }
+      h2 {
+        font-size: 180%;
+        color: var(--color-neutral-30);
+      }
 
-            h3 {
-                font-size: 130%;
-            }
+      h3 {
+        font-size: 130%;
+      }
 
-            /* Lists */
+      /* Lists */
 
-            ul,
-            ol {
-                padding-inline-start: 2em;
-            }
+      ul,
+      ol {
+        padding-inline-start: 2em;
+      }
 
-            li {
-                &::marker {
-                    color: var(--color-neutral-40);
-                }
+      li {
+        &::marker {
+          color: var(--color-neutral-40);
+        }
 
-                + li {
-                    margin-top: 0.2em;
-                }
-            }
+        + li {
+          margin-top: 0.2em;
+        }
+      }
 
-            /* Sectioning elements */
+      /* Sectioning elements */
 
-            header {
-                padding-block: 1em;
-                text-align: center;
-            }
+      header {
+        padding-block: 1em;
+        text-align: center;
+      }
 
-            main {
-                background: white;
-                color: var(--color-neutral-20);
-                border-radius: 1rem;
-                padding: 0.1rem 2rem;
-            }
+      main {
+        background: white;
+        color: var(--color-neutral-20);
+        border-radius: 1rem;
+        padding: 0.1rem 2rem;
+      }
 
-            /* Figures */
+      /* Figures */
 
-            figure {
-                margin: 1em 0;
-                padding: 0.5rem;
-                margin-inline: -0.5em;
-                border: 1px solid var(--color-neutral-80);
-                box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
-                text-align: center;
-                background: white;
+      figure {
+        margin: 1em 0;
+        padding: 0.5rem;
+        margin-inline: -0.5em;
+        border: 1px solid var(--color-neutral-80);
+        box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+        text-align: center;
+        background: white;
 
-                > figcaption {
-                    font: 500 75% var(--font-sans);
-                    background: var(--color-neutral-95);
-                    padding: 0.5rem;
-                    margin: -0.5rem;
-                    margin-top: 0.5rem;
-                    counter-increment: figure;
-                    text-align: left;
+        > figcaption {
+          font: 500 75% var(--font-sans);
+          background: var(--color-neutral-95);
+          padding: 0.5rem;
+          margin: -0.5rem;
+          margin-top: 0.5rem;
+          counter-increment: figure;
+          text-align: left;
 
-                    &::before {
-                        content: "Figure " counter(figure) ": ";
-                        font-weight: bold;
-                        color: var(--color-neutral-40);
-                    }
+          &::before {
+            content: "Figure " counter(figure) ": ";
+            font-weight: bold;
+            color: var(--color-neutral-40);
+          }
 
-                    a:not(:hover, :focus, :active) {
-                        color: inherit;
-                        text-decoration: underline;
-                        text-decoration-color: color-mix(
-                            in lab,
-                            currentColor,
-                            transparent 70%
-                        );
-                    }
-                }
-            }
-        </style>
-    </head>
+          a:not(:hover, :focus, :active) {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-color: color-mix(
+              in lab,
+              currentColor,
+              transparent 70%
+            );
+          }
+        }
+      }
+    </style>
+  </head>
 
-    <body>
-        <header>
-            <h1>
-                <small>Project 2</small>
-                Persuasive or Deceptive Visualization?
-            </h1>
+  <body>
+    <header>
+      <h1>
+        <small>Project 2</small>
+        Persuasive or Deceptive Visualization?
+      </h1>
 
-            <p><strong>Your Name</strong> — <em>Your UCSD Email Address</em></p>
-        </header>
+      <p><strong>Your Name</strong> — <em>Your UCSD Email Address</em></p>
+    </header>
 
-        <main>
-            <h2>Proposition: [STATE PROPOSITION]</h2>
+    <main>
+      <h2>Proposition: [STATE PROPOSITION]</h2>
 
-            <section>
-                <h3>FOR the Proposition</h3>
+      <section>
+        <h3>FOR the Proposition</h3>
 
-                <figure>
-                    <img src="IMAGE_FILENAME" alt="" />
-                    <figcaption>BRIEF CAPTION HERE.</figcaption>
-                </figure>
+        <figure>
+          <img src="img/output" alt="" />
+          <figcaption>BRIEF CAPTION HERE.</figcaption>
+        </figure>
 
-                <p>Design Decisions and Rationale:</p>
+        <p>Design Decisions and Rationale:</p>
 
-                <ul>
-                    <li>RATIONALE_1</li>
-                    <li>RATIONALE_2</li>
-                    <li>RATIONALE_3</li>
-                </ul>
-            </section>
+        <ul>
+          <li>RATIONALE_1</li>
+          <li>RATIONALE_2</li>
+          <li>RATIONALE_3</li>
+        </ul>
+      </section>
 
-            <section>
-                <h3>AGAINST the Proposition</h3>
+      <section>
+        <h3>AGAINST the Proposition</h3>
 
-                <figure>
-                    <img src="IMAGE_FILENAME" alt="" />
-                    <figcaption>BRIEF CAPTION HERE.</figcaption>
-                </figure>
+        <figure>
+          <img src="img/output.png" alt="" />
+          <figcaption>BRIEF CAPTION HERE.</figcaption>
+        </figure>
 
-                <p>Design Decisions and Rationale:</p>
+        <p>Design Decisions and Rationale:</p>
+        <ul>
+          <li>
+            <strong>Asymmetric bin widths on the x-axis</strong><br />
+            Score: -1<br />
+            The categories are not evenly spaced: 1, 2, and 3 each represent a
+            single value, while 4–5, 6–10, 11–20, and 21+ span increasingly wide
+            ranges. This makes the right-side bars appear visually equivalent in
+            width to the precise single-value bars, even though each encodes a
+            much broader range of the data. I considered using uniform bin
+            widths, but this would have made the distribution look flatter and
+            less dramatic. This decision helps to persuade the audience that the
+            “typical” officer is a repeat offender – not just anomalies from a
+            few “bad apples”. The only issue I have with this is that it becomes
+            a bit apparent once you take a closer look at the y-axis; however,
+            it’s not as apparent at a first glance.
+          </li>
 
-                <ul>
-                    <li>RATIONALE_1</li>
-                    <li>RATIONALE_2</li>
-                    <li>RATIONALE_3</li>
-                </ul>
-            </section>
+          <li>
+            <strong
+              >Color encoding as both functional and emotional signal</strong
+            ><br />
+            Score: -0.5<br />
+            Functionally, it uses a colorblind-safe sequential palette to signal
+            magnitude. By using a perceptually uniform color scale, it reads
+            easily to the eye. Emotionally, it borrows from danger/heat
+            conventions—readers intuitively associate red with alarm without
+            being told to. In this way, I can manufacture a sense of escalating
+            severity. By making the lower allegation counts gray and
+            unnoticeable, the audience is drawn away from them, instead focusing
+            on the bold colors that demonstrate high allegation counts. An issue
+            with this is that the colors don't really have much meaning or a
+            legend—they're primarily based on higher counts and are meant to
+            supplement the user’s interpretation of the graph.
+          </li>
 
-            <section>
-                <h2>Final Reflection</h2>
+          <li>
+            <strong>Annotations throughout the graph</strong><br />
+            Score: (not provided)<br />
+            These annotations are placed throughout the graph to direct readers
+            and align them with the argument in the title and subtitle,
+            specifically highlighting the small number of officers with only 1
+            allegation, the median officer with 6 allegations, and demonstrating
+            that the “Tiny Minority” of officers with high allegations only
+            applies when you get to 21+ allegations. This allows the audience to
+            be persuaded by our own annotations, drawing conclusions they may
+            not have at first glance.
+          </li>
 
-                <p>[WRITE FINAL REFLECTION PARAGRAPHS HERE.]</p>
-            </section>
-        </main>
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"c822b88e119346678db149ed7b7721c9","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
-</body>
+          <li>
+            <strong
+              >Subtitle mentioning that 91% of officers in the dataset are
+              repeat subjects</strong
+            ><br />
+            Score: 1<br />
+            While this is true, the number can be slightly misleading. We don’t
+            know the true proportion of officers that have had an accusation
+            filed against them—we only have data on officers that have had an
+            accusation. Therefore, it is more likely for us to observe repeat
+            offenders over a 35-year period. Despite this persuasion, all of
+            this information is readily present in the subtitle—it specifically
+            lists the period of time as well as acknowledging that this is only
+            counting the officers named in these complaints.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Final Reflection</h2>
+
+        <p>[WRITE FINAL REFLECTION PARAGRAPHS HERE.]</p>
+      </section>
+    </main>
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516"
+      integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg=="
+      data-cf-beacon='{"version":"2024.11.0","token":"c822b88e119346678db149ed7b7721c9","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
