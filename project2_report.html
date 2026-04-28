@@ -148,26 +148,121 @@
         Persuasive or Deceptive Visualization?
       </h1>
 
-      <p><strong>Your Name</strong> — <em>Your UCSD Email Address</em></p>
+      <p>
+        <strong>Ishayu Ghosh</strong> — <em>ighosh@ucsd.edu</em> &nbsp;|&nbsp;
+        <strong>Shreya Bharathwajan</strong> —
+        <em>sbharathwajan@ucsd.edu</em> &nbsp;|&nbsp;
+        <strong>Annabelle Guiditta</strong> — <em>aguiditta@ucsd.edu</em>
+      </p>
     </header>
 
     <main>
-      <h2>Proposition: [STATE PROPOSITION]</h2>
+      <h2>
+        Proposition: Most officers of the NYPD are rarely complained about - a
+        tiny minority generate nearly half the allegations
+      </h2>
 
       <section>
         <h3>FOR the Proposition</h3>
 
         <figure>
-          <img src="img/output" alt="" />
-          <figcaption>BRIEF CAPTION HERE.</figcaption>
+          <img src="img/pareto.png" alt="" />
+          <figcaption>
+            Civilian misconduct allegations are highly concentrated: the top 10%
+            of officers (by complaint volume) account for nearly a third of all
+            allegations, and the top half account for 80% — 32 percentage points
+            above what equal distribution would predict.
+          </figcaption>
         </figure>
 
         <p>Design Decisions and Rationale:</p>
 
         <ul>
-          <li>RATIONALE_1</li>
-          <li>RATIONALE_2</li>
-          <li>RATIONALE_3</li>
+          <li>
+            <strong>Pareto curve sorted by # allegations</strong><br />
+            <strong>Score: +2</strong>
+            <ul>
+              <li>
+                Sorting officers by allegations and plotting the cumulative
+                share makes “concentration” visually unavoidable. Readers can
+                immediately see whether allegations are broadly distributed or
+                clustered.
+              </li>
+              <li>
+                I considered a histogram or boxplot of allegations-per-officer,
+                but those make it harder to know what percentage of officers
+                account for what percentage of allegations.
+              </li>
+              <li>
+                Given that the visualization is focused on a single curve, there
+                is negative space to keep the curve readable at a glance. I then
+                used targeted annotations to make the empty space work as
+                emphasis rather than dead area.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Equality baseline</strong><br />
+            <strong>Score: +2</strong>
+            <ul>
+              <li>
+                The dashed diagonal gives a clear “no concentration” comparison,
+                so the audience doesn’t have to mentally invent what “fair/even
+                distribution” would look like.
+              </li>
+              <li>
+                I considered omitting the baseline to keep the chart simpler and
+                more forceful, but adding it strengthens the argument by making
+                the difference measurable and interpretable rather than just
+                having a steep curve.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Annotations throughout</strong><br />
+            <strong>Score: +1.5</strong>
+            <ul>
+              <li>
+                I used the annotations to make the reader clearly understand and
+                take away the uneven distribution of allegations.
+              </li>
+              <li>
+                It’s one thing to look at the plot and see the difference
+                between the curve and the equality line, but reading facts such
+                as: “20% of officers account for 50% of allegations” makes it
+                much more memorable.
+              </li>
+              <li>
+                What makes it slightly deceptive is the fact that I rounded to
+                whole percentages (e.g., 49% → 50%) to make the takeaway
+                punchier.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>Use of common proverb in title</strong><br />
+            <strong>Score: -0.5</strong>
+            <ul>
+              <li>
+                “A few bad apples spoil the bunch” is a common phrase that
+                everyone has heard and perfectly fits my message. This makes the
+                plot more memorable and strengthens the idea that only a small
+                amount of officers are responsible for most allegations.
+              </li>
+              <li>
+                It is deceptive as the term “few” is vague and tends to mean a
+                small amount, supporting my message.
+              </li>
+              <li>
+                All the previous titles I was considering, such as “a few
+                officers account for most allegations,” have the same
+                interpretation but sound more boring compared to the proverb.
+              </li>
+            </ul>
+          </li>
         </ul>
       </section>
 
@@ -176,14 +271,19 @@
 
         <figure>
           <img src="img/output.png" alt="" />
-          <figcaption>BRIEF CAPTION HERE.</figcaption>
+          <figcaption>
+            Among NYPD officers named in CCRB complaints (1985–2020), 91% had
+            more than one allegation and the median officer had six. Only 9% of
+            named officers had a single complaint; the "tiny minority" framing
+            applies at best to the 7% with 21 or more allegations.
+          </figcaption>
         </figure>
 
         <p>Design Decisions and Rationale:</p>
         <ul>
           <li>
             <strong>Asymmetric bin widths on the x-axis</strong><br />
-            Score: -1<br />
+            Score: -1.5<br />
             The categories are not evenly spaced: 1, 2, and 3 each represent a
             single value, while 4–5, 6–10, 11–20, and 21+ span increasingly wide
             ranges. This makes the right-side bars appear visually equivalent in
@@ -217,7 +317,7 @@
 
           <li>
             <strong>Annotations throughout the graph</strong><br />
-            Score: (not provided)<br />
+            Score: 0.5<br />
             These annotations are placed throughout the graph to direct readers
             and align them with the argument in the title and subtitle,
             specifically highlighting the small number of officers with only 1
@@ -233,7 +333,7 @@
               >Subtitle mentioning that 91% of officers in the dataset are
               repeat subjects</strong
             ><br />
-            Score: 1<br />
+            Score: -1<br />
             While this is true, the number can be slightly misleading. We don’t
             know the true proportion of officers that have had an accusation
             filed against them—we only have data on officers that have had an
